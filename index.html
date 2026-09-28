@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Now, Labs · Dumbo games</title>
+<meta name="description" content="Now, Labs — Dumbo Drop · Dumbo Jump">
+<meta property="og:title" content="Now, Labs">
+<meta property="og:description" content="덤보드랍 · 덤보점프">
+<meta property="og:image" content="https://nekarose.github.io/games/assets/dumbodrop_icon.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/dumbodrop_icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<script>
+var SRC = (new URLSearchParams(location.search).get("src") || "").replace(/[^a-z0-9_-]/gi, "").slice(0, 40);
+function iosUrl(id) { return "https://apps.apple.com/app/id" + id; }
+function playUrl(pkg, content) {
+  var u = "https://play.google.com/store/apps/details?id=" + pkg;
+  if (SRC) u += "&referrer=" + encodeURIComponent("utm_source=" + SRC + "&utm_medium=social&utm_campaign=link&utm_content=" + content);
+  return u;
+}
+var UA = navigator.userAgent;
+// iPadOS reports itself as a Mac; a Mac with a touch screen is an iPad.
+var IS_IOS = /iPhone|iPad|iPod/.test(UA) || (/Macintosh/.test(UA) && navigator.maxTouchPoints > 1);
+var IS_ANDROID = /Android/.test(UA);
+function soon(a) {
+  a.removeAttribute("href"); a.classList.add("soon");
+  a.querySelector("span, .lbl").textContent = /^ko\b/i.test(navigator.language || "") ? "Google Play 곧 출시" : "Google Play coming soon";
+}
+function applyLang() {
+  if (/^ko\b/i.test(navigator.language || "")) return;
+  document.documentElement.lang = "en";
+  document.querySelectorAll("[data-en]").forEach(function (el) { el.textContent = el.dataset.en; });
+}
+</script>
+<style>
+:root{--bg:#eef7ff;--ink:#1a1f5c;--card:#fff;--muted:#5a6a8a}
+*{box-sizing:border-box} html,body{margin:0}
+body{min-height:100vh;padding:40px 16px 48px;background:linear-gradient(180deg,#bfe9ff 0%,var(--bg) 40%);
+ font-family:"Do Hyeon","Apple SD Gothic Neo",system-ui,sans-serif;color:var(--ink)}
+main{max-width:520px;margin:0 auto}
+header{text-align:center;margin-bottom:26px}
+header h1{margin:0;font-weight:400;font-size:40px;letter-spacing:.5px}
+header p{margin:6px 0 0;color:var(--muted);font-size:17px}
+.card{display:flex;gap:16px;align-items:center;background:var(--card);border-radius:26px;padding:16px;margin:0 0 16px;
+ box-shadow:0 8px 0 rgba(26,31,92,.08),0 10px 30px rgba(26,31,92,.08)}
+.icon{width:96px;height:96px;border-radius:22px;flex:none;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+.info{min-width:0;flex:1}
+.info h2{margin:0;font-weight:400;font-size:26px}
+.info p{margin:4px 0 12px;color:var(--muted);font-size:16px;line-height:1.35}
+.stores{display:flex;gap:8px;flex-wrap:wrap}
+.s{display:inline-flex;align-items:center;gap:6px;padding:9px 14px 7px;border-radius:999px;text-decoration:none;
+ color:#fff;font-size:17px;background:linear-gradient(180deg,#FFB43A 0%,#FF7A1A 100%);box-shadow:0 4px 0 rgba(20,20,70,.3)}
+.s.play{background:linear-gradient(180deg,#5ec8ff 0%,#2f7de0 100%)}
+.s svg{width:18px;height:18px;fill:currentColor}
+.s.only{font-size:19px;padding:11px 22px 9px}
+footer{text-align:center;color:var(--muted);font-size:14px;margin-top:22px}
+</style></head>
+<body><main>
+  <header><h1>Now, Labs</h1><p data-en="One-hand games starring Dumbo">덤보와 함께하는 한 손 게임</p></header>
+  
+  <article class="card" data-ios="6797112599" data-pkg="com.nekarose.photo_puzzle_game" data-slug="dumbodrop" data-play="1">
+    <img class="icon" src="assets/dumbodrop_icon.png" alt="">
+    <div class="info">
+      <h2 data-en="Dumbo Drop">덤보드랍</h2>
+      <p data-en="Match 4 pieces of a picture and watch them pop">같은 그림 4조각 모으면 펑! 한 손 조각 퍼즐</p>
+      <div class="stores">
+        <a class="s ios" href="https://apps.apple.com/app/id6797112599"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c.03 3.03 2.66 4.04 2.69 4.05-.02.07-.42 1.44-1.39 2.85-.84 1.22-1.71 2.44-3.08 2.46-1.35.03-1.78-.8-3.33-.8-1.54 0-2.02.78-3.3.83-1.32.05-2.33-1.32-3.18-2.54-1.73-2.5-3.06-7.07-1.28-10.15.88-1.53 2.46-2.5 4.17-2.53 1.3-.02 2.53.88 3.33.88.79 0 2.29-1.09 3.86-.93.66.03 2.5.27 3.69 2.01-.1.06-2.2 1.28-2.18 3.82M13.84 3.19c.7-.85 1.18-2.04 1.05-3.22-1.01.04-2.24.68-2.97 1.53-.65.75-1.22 1.96-1.07 3.12 1.13.09 2.28-.57 2.99-1.43"/></svg><span>App Store</span></a>
+        <a class="s play" href="https://play.google.com/store/apps/details?id=com.nekarose.photo_puzzle_game"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 13.8 12 3.6 22.2c-.35-.2-.6-.6-.6-1.1V2.9c0-.5.25-.9.6-1.1m11.3 11.3 2.4 2.4-11.2 6.4 8.8-8.8m3.7-3.7 2.9 1.7c.8.5.8 1.3 0 1.8l-2.9 1.7-2.6-2.6 2.6-2.6M6.1 2.1l11.2 6.4-2.4 2.4-8.8-8.8"/></svg><span>Google Play</span></a>
+      </div>
+    </div>
+  </article>
+  <article class="card" data-ios="6812717941" data-pkg="com.nekarose.dumbojump" data-slug="dumbojump" data-play="0">
+    <img class="icon" src="assets/dumbojump_icon.png" alt="">
+    <div class="info">
+      <h2 data-en="Dumbo Jump">덤보점프</h2>
+      <p data-en="Draw a line and climb 7,000 m from the deep sea">선 하나로 7,000m 심해에서 수면까지</p>
+      <div class="stores">
+        <a class="s ios" href="https://apps.apple.com/app/id6812717941"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.62c.03 3.03 2.66 4.04 2.69 4.05-.02.07-.42 1.44-1.39 2.85-.84 1.22-1.71 2.44-3.08 2.46-1.35.03-1.78-.8-3.33-.8-1.54 0-2.02.78-3.3.83-1.32.05-2.33-1.32-3.18-2.54-1.73-2.5-3.06-7.07-1.28-10.15.88-1.53 2.46-2.5 4.17-2.53 1.3-.02 2.53.88 3.33.88.79 0 2.29-1.09 3.86-.93.66.03 2.5.27 3.69 2.01-.1.06-2.2 1.28-2.18 3.82M13.84 3.19c.7-.85 1.18-2.04 1.05-3.22-1.01.04-2.24.68-2.97 1.53-.65.75-1.22 1.96-1.07 3.12 1.13.09 2.28-.57 2.99-1.43"/></svg><span>App Store</span></a>
+        <a class="s play" href="https://play.google.com/store/apps/details?id=com.nekarose.dumbojump"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 1.8 13.8 12 3.6 22.2c-.35-.2-.6-.6-.6-1.1V2.9c0-.5.25-.9.6-1.1m11.3 11.3 2.4 2.4-11.2 6.4 8.8-8.8m3.7-3.7 2.9 1.7c.8.5.8 1.3 0 1.8l-2.9 1.7-2.6-2.6 2.6-2.6M6.1 2.1l11.2 6.4-2.4 2.4-8.8-8.8"/></svg><span>Google Play</span></a>
+      </div>
+    </div>
+  </article>
+  <footer>© Now, Labs</footer>
+</main>
+<script>
+applyLang();
+document.querySelectorAll(".card").forEach(function (c) {
+  var ios = c.querySelector(".ios"), play = c.querySelector(".play");
+  ios.href = iosUrl(c.dataset.ios);
+  play.href = playUrl(c.dataset.pkg, "hub_" + c.dataset.slug);
+  if (c.dataset.play === "0") { soon(play); if (IS_ANDROID) { ios.remove(); return; } }
+  // On a phone only that phone's store is useful: keep one big button.
+  if (IS_IOS) { play.remove(); ios.classList.add("only"); }
+  else if (IS_ANDROID) { ios.remove(); play.classList.add("only"); }
+});
+</script>
+</body></html>
